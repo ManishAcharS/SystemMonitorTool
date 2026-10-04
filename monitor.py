@@ -1,4 +1,4 @@
-import time
+ï»¿import time
 import platform
 import psutil
 from rich.console import Console
@@ -49,7 +49,7 @@ def get_per_core_cpu():
 
 
 def build_table():
-    table = Table(title="SysGuard — System Health Monitor")
+    table = Table(title="SysGuard - System Health Monitor")
     table.add_column("Metric", style="bold")
     table.add_column("Usage", style="bold")
     table.add_column("Per-core", style="dim")
