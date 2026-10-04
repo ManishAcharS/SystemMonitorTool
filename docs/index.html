@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SysGuard &mdash; System Health Monitor &amp; Auto-Alert Tool</title>
+<meta name="description" content="Cross-platform system health monitor with a live CLI dashboard, SQLite history, threshold alerts and daily reports.">
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel: #161b22;
+    --panel-2: #1c232c;
+    --border: #2a3441;
+    --text: #e6edf3;
+    --muted: #9aa7b4;
+    --accent: #3fb950;
+    --accent-dim: #238636;
+    --warn: #d29922;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  header { text-align: center; padding: 56px 0 12px; }
+  h1 { font-size: 2.6rem; margin: 0 0 6px; letter-spacing: -0.5px; }
+  .tagline { color: var(--muted); font-size: 1.05rem; margin: 0 auto; max-width: 640px; }
+  .badge {
+    display: inline-block; background: var(--panel-2); border: 1px solid var(--border);
+    color: var(--muted); border-radius: 999px; padding: 3px 12px;
+    font-size: 0.8rem; margin-bottom: 14px;
+  }
+  section { padding: 28px 0; }
+  h2 { font-size: 1.35rem; margin: 0 0 14px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px;
+  }
+  .shot { margin: 0; }
+  .shot img {
+    width: 100%; display: block; border-radius: 8px;
+    border: 1px solid var(--border); background: #000;
+  }
+  .shot figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 10px; text-align: center; }
+  .cta { text-align: center; margin: 34px 0 8px; }
+  .btn {
+    display: inline-block; background: var(--accent-dim); color: #fff;
+    text-decoration: none; font-weight: 600; font-size: 1.05rem;
+    padding: 14px 30px; border-radius: 8px; border: 1px solid var(--accent);
+    transition: background 0.15s ease;
+  }
+  .btn:hover { background: var(--accent); color: #06140a; }
+  .alt { display: block; margin-top: 12px; font-size: 0.9rem; }
+  .alt a { color: var(--accent); }
+  ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; }
+  ol.steps li {
+    counter-increment: s; position: relative; padding: 16px 16px 16px 62px;
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 12px;
+  }
+  ol.steps li::before {
+    content: counter(s); position: absolute; left: 16px; top: 15px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--accent-dim); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.95rem;
+  }
+  ol.steps strong { display: block; margin-bottom: 2px; }
+  ol.steps span { color: var(--muted); font-size: 0.93rem; }
+  code {
+    background: var(--panel-2); border: 1px solid var(--border);
+    padding: 1px 6px; border-radius: 4px; font-size: 0.9em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .feat { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .feat h3 { margin: 0 0 6px; font-size: 1rem; color: var(--accent); }
+  .feat p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+  footer {
+    border-top: 1px solid var(--border); margin-top: 20px;
+    padding: 26px 0 40px; text-align: center; color: var(--muted); font-size: 0.88rem;
+  }
+  footer a { color: var(--muted); }
+  .note { color: var(--warn); font-size: 0.9rem; margin-top: 10px; }
+  @media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    .btn { width: 100%; }
+    .wrap { padding: 0 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <span class="badge">Python &middot; Windows &amp; Linux &middot; MIT License</span>
+  <h1>SysGuard</h1>
+  <p class="tagline">
+    System Health Monitor &amp; Auto-Alert Tool. SysGuard watches your CPU, RAM and
+    disk usage live in your terminal, records every reading to a local database,
+    and pops a desktop alert the moment something crosses your thresholds.
+  </p>
+</header>
+
+<section class="wrap">
+  <h2>Live dashboard</h2>
+  <figure class="shot card">
+    <!-- PLACEHOLDER: replace screenshot-dashboard.png with your real screenshot -->
+    <img src="screenshot-dashboard.png" alt="SysGuard live terminal dashboard showing CPU, RAM and Disk usage with per-core breakdown" loading="lazy">
+    <figcaption>SysGuard refreshing live &mdash; CPU, RAM, Disk and a per-core breakdown.</figcaption>
+  </figure>
+</section>
+
+<section class="wrap cta">
+  <a class="btn" href="https://github.com/ManishAcharS/SystemMonitorTool/archive/refs/heads/main.zip" download>
+    Download SysGuard
+  </a>
+  <span class="alt">
+    Prefer just the launcher? <a href="https://raw.githubusercontent.com/ManishAcharS/SystemMonitorTool/main/run.bat">Download run.bat</a>
+  </span>
+</section>
+
+<section class="wrap">
+  <h2>How to use</h2>
+  <ol class="steps">
+    <li>
+      <strong>Download</strong>
+      <span>Grab the ZIP above and unzip it anywhere you like, e.g. your Desktop.</span>
+    </li>
+    <li>
+      <strong>Double-click <code>run.bat</code></strong>
+      <span>That's it. It sets up everything by itself and starts the monitor. No typing, no setup.</span>
+    </li>
+    <li>
+      <strong>See your system stats</strong>
+      <span>Watch CPU, RAM and Disk update live. Close the black window (or press <code>Ctrl+C</code>) when you're done.</span>
+    </li>
+  </ol>
+  <p class="note">Already have Python? Skip the launcher: <code>pip install -r requirements.txt</code> then <code>python monitor.py</code>.</p>
+</section>
+
+<section class="wrap">
+  <h2>What it does</h2>
+  <div class="grid">
+    <div class="feat">
+      <h3>Live monitoring</h3>
+      <p>CPU, RAM and disk usage refresh every few seconds, with a per-core CPU breakdown.</p>
+    </div>
+    <div class="feat">
+      <h3>Smart alerts</h3>
+      <p>Desktop notifications fire once per breach &mdash; no spam while a problem is ongoing.</p>
+    </div>
+    <div class="feat">
+      <h3>History &amp; reports</h3>
+      <p>Every sample is stored in SQLite; print a daily avg/max summary or export to CSV.</p>
+    </div>
+    <div class="feat">
+      <h3>Set &amp; forget</h3>
+      <p>Adjust thresholds in <code>config.yaml</code>, or schedule it to run in the background.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p>
+    <a href="https://github.com/ManishAcharS/SystemMonitorTool">Source code on GitHub</a>
+    &middot; MIT License
+  </p>
+</footer>
+
+</body>
+</html>
