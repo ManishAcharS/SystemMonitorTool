@@ -1,0 +1,12 @@
+# Windows batch files MUST use CRLF line endings, otherwise labels/goto and
+# pause can misbehave on older versions of cmd.exe. This also guarantees that
+# anyone who downloads run.bat straight from GitHub gets correct Windows
+# line endings regardless of how their own git is configured.
+*.bat text eol=crlf
+
+# Keep everything else as plain LF in the repository.
+*.py   text eol=lf
+*.md   text eol=lf
+*.yaml text eol=lf
+*.txt  text eol=lf
+*.html text eol=lf
