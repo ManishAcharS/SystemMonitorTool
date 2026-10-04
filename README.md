@@ -1,5 +1,7 @@
 # SysGuard — System Health Monitor & Auto-Alert Tool
 
+> **SysGuard is a command-line tool — run it in a terminal; it displays a live-updating dashboard (similar to htop).** There is no GUI and no desktop app icon.
+
 Cross-platform (Windows + Linux) system monitoring CLI tool built with Python, psutil, and rich. Tracks CPU, RAM, and disk usage in real time, logs history to SQLite, sends desktop alerts, optionally emails on threshold breaches, generates auto-start schedulers, and produces daily summary reports.
 
 ## Features
