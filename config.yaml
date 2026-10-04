@@ -1,0 +1,8 @@
+monitor:
+  interval: 2  # seconds between checks
+  history_limit: 100000  # optional, not enforced here
+
+thresholds:
+  cpu: 85.0  # percent
+  ram: 85.0  # percent
+  disk: 80.0  # percent

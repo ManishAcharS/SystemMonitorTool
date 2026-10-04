@@ -1,0 +1,6 @@
+psutil
+rich
+plyer
+python-dotenv
+PyYAML
+win10toast; platform_system=='Windows'
